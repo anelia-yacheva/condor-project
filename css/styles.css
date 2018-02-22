@@ -7,14 +7,13 @@
 .no-padding {
   padding: 0 !important; }
 
+/* Helpful functions */
 /* Layout */
 body {
   font-family: Tahoma, sans-serif;
   font-size: 14px;
   line-height: 18px;
   color: #fff;
-  padding-top: 10px;
-  padding-bottom: 10px;
   position: relative; }
 
 /* Headings */
@@ -55,15 +54,11 @@ a {
   border-radius: 0;
   margin: 0;
   border: 0 none;
-  padding-left: 4px;
-  padding-right: 4px;
-  max-width: 148px !important; }
+  padding: 0; }
   .dropdown .dropdown-menu .dropdown-item {
     color: #fff;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.5);
-    font-size: 12px;
-    line-height: 12px;
-    padding: 5px;
+    border-bottom: 1px solid #000;
+    padding: 15px;
     white-space: normal;
     transition: 300ms background ease-in-out; }
     .dropdown .dropdown-menu .dropdown-item:last-of-type {
@@ -71,93 +66,107 @@ a {
     .dropdown .dropdown-menu .dropdown-item:focus, .dropdown .dropdown-menu .dropdown-item:hover, .dropdown .dropdown-menu .dropdown-item.active, .dropdown .dropdown-menu .dropdown-item:active {
       background: #011414; }
 
+@media screen and (min-width: 992px) {
+  .dropdown-menu {
+    max-width: 148px !important;
+    padding: 8px 4px; }
+    .dropdown-menu .dropdown-item {
+      font-size: 12px;
+      line-height: 12px;
+      padding: 5px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.5); } }
+
 .logo.logo-fixed {
   left: 0;
-  top: 100px;
+  top: 7.14286rem;
   position: fixed; }
 
 header {
   background-color: #022929;
-  position: relative;
-  margin-bottom: 10px; }
+  position: relative; }
   header .logo-container {
-    padding-top: 15px; }
+    padding-top: 1.07143rem; }
 
 nav {
-  padding-left: 10px !important; }
+  padding-left: 0.71429rem !important;
+  padding-right: 0.71429rem !important;
+  padding-bottom: 0.71429rem !important; }
+  nav .navbar-toggler {
+    background: #fff;
+    position: absolute;
+    right: 1.42857rem;
+    top: -1.78571rem; }
   nav.navbar {
-    padding-top: 28px;
+    padding-top: 2rem;
     padding-left: 0;
     padding-right: 0;
     padding-bottom: 0; }
   nav .nav-item {
     background-color: #066666;
-    margin-right: 2px;
-    width: 102px;
-    transition: 300ms background ease-in-out; }
+    transition: 300ms background ease-in-out;
+    border-bottom: 1px solid #000; }
     nav .nav-item a.nav-link {
       color: #fff !important;
       display: block;
       text-align: center;
       font-weight: bold;
-      padding-top: 6px !important;
-      padding-bottom: 6px !important; }
+      padding-top: 1.07143rem !important;
+      padding-bottom: 1.07143rem !important; }
     nav .nav-item:hover, nav .nav-item.active, nav .nav-item:active, nav .nav-item:focus {
       background: #011414; }
     nav .nav-item.dropdown .dropdown-toggle {
       color: #fff;
       font-weight: bold;
       text-align: center;
-      padding-top: 6px;
-      padding-bottom: 6px; }
+      padding-top: 1.07143rem;
+      padding-bottom: 1.07143rem; }
       nav .nav-item.dropdown .dropdown-toggle:after {
         vertical-align: 0.15em; }
 
 .main-container {
-  min-height: 836px;
-  display: flex; }
+  min-height: 836px; }
   .main-container .content-wrapper {
     background: #1e3a3a;
-    border: 10px solid;
+    border: 0.71429rem solid;
     border-color: #066666;
-    padding: 18px 10px 10px;
+    padding: 1.28571rem 0.71429rem 0.71429rem;
     height: 100%; }
     .main-container .content-wrapper p {
-      padding-left: 13px;
-      padding-right: 13px;
-      text-indent: 36px;
-      font-size: 12px; }
+      padding-left: 0.92857rem;
+      padding-right: 0.92857rem;
+      text-indent: 2.57143rem;
+      font-size: 0.85714rem; }
   .main-container aside {
     background: #022929;
-    border: 10px solid #055252;
+    border: 0.71429rem solid #055252;
     height: 100%;
-    padding: 16px 13px; }
+    padding: 1.14286rem 0.92857rem 2.28571rem; }
     .main-container aside span.headline {
-      font-size: 16px;
+      font-size: 1.14286rem;
       text-transform: uppercase;
       display: block;
       font-family: Tahoma, sans-serif;
-      margin-bottom: 18px; }
+      margin-bottom: 1.28571rem; }
     .main-container aside .social-icons {
-      margin-bottom: 38px; }
+      margin-bottom: 2.71429rem; }
       .main-container aside .social-icons li {
-        margin-right: 13px; }
+        margin-right: 0.92857rem; }
         .main-container aside .social-icons li a {
           display: block;
           background: #848484;
-          padding: 10px;
+          padding: 0.71429rem;
           transition: 300ms background ease-in-out; }
           .main-container aside .social-icons li a .svg-inline--fa {
-            height: 18px;
-            width: 23px; }
+            height: 1.28571rem;
+            width: 1.64286rem; }
           .main-container aside .social-icons li a:hover {
             background: #000; }
             .main-container aside .social-icons li a:hover .svg-inline--fa {
               color: #fff; }
     .main-container aside .categories {
-      margin-bottom: 19px; }
+      margin-bottom: 1.35714rem; }
       .main-container aside .categories .navbar-nav .nav-item {
-        margin-bottom: 7px; }
+        margin-bottom: 0.5rem; }
         .main-container aside .categories .navbar-nav .nav-item .nav-link {
           border-bottom: 1px solid;
           border-color: #fff;
@@ -168,28 +177,65 @@ nav {
             border-bottom: 1px solid transparent;
             color: #fff; }
     .main-container aside .recent-stories .carousel .carousel-indicators {
-      bottom: -30px; }
+      bottom: -2.14286rem; }
       .main-container aside .recent-stories .carousel .carousel-indicators li {
         cursor: pointer;
         width: 3px; }
         .main-container aside .recent-stories .carousel .carousel-indicators li:before, .main-container aside .recent-stories .carousel .carousel-indicators li:after {
           pointer-events: none; }
 
-footer {
-  margin-top: 10px; }
-  footer .footer-wrapper {
-    background-color: #066666;
-    padding-top: 13px;
-    padding-bottom: 13px; }
-    footer .footer-wrapper .navbar-nav .nav-item {
-      margin-left: 15px; }
-      footer .footer-wrapper .navbar-nav .nav-item .nav-link {
-        padding: 0;
-        border-bottom: 1px solid;
-        border-color: #fff;
-        transition: 300ms border ease-in-out; }
-        footer .footer-wrapper .navbar-nav .nav-item .nav-link:hover {
-          color: #fff;
-          border-bottom: 1px solid transparent; }
-      footer .footer-wrapper .navbar-nav .nav-item.active .nav-link {
+footer .footer-wrapper {
+  background-color: #066666;
+  padding-top: 0.92857rem;
+  padding-bottom: 0.92857rem; }
+  footer .footer-wrapper .navbar-nav .nav-item {
+    margin-left: 1.07143rem; }
+    footer .footer-wrapper .navbar-nav .nav-item a.nav-link {
+      padding: 0;
+      border-bottom: 1px solid;
+      border-color: #fff;
+      transition: 300ms border ease-in-out; }
+      footer .footer-wrapper .navbar-nav .nav-item a.nav-link:hover {
+        color: #fff;
         border-bottom: 1px solid transparent; }
+    footer .footer-wrapper .navbar-nav .nav-item.active .nav-link {
+      border-bottom: 1px solid transparent; }
+
+@media screen and (min-width: 768px) {
+  .main-container aside {
+    padding: 16px 13px; }
+    .main-container aside .social-icons li {
+      margin-right: 9px; } }
+
+@media screen and (min-width: 992px) {
+  body {
+    padding-top: 10px;
+    padding-left: 50px;
+    padding-right: 50px;
+    padding-bottom: 10px; }
+  header {
+    margin-bottom: 10px; }
+  nav {
+    padding-right: 0 !important;
+    padding-bottom: 0 !important; }
+    nav .nav-item {
+      margin-right: 2px;
+      width: 102px;
+      border-bottom: 0 none; }
+      nav .nav-item a.nav-link {
+        padding-top: 6px !important;
+        padding-bottom: 6px !important; }
+    nav .nav-item.dropdown .dropdown-toggle {
+      padding-top: 6px;
+      padding-bottom: 6px; }
+  .main-container aside .social-icons li a {
+    padding: 0.5rem; }
+  footer {
+    margin-top: 10px; } }
+
+@media screen and (min-width: 1400px) {
+  body {
+    padding-left: 0;
+    padding-right: 0; }
+  .main-container aside .social-icons li {
+    margin-right: 13px; } }

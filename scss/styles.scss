@@ -3,26 +3,34 @@
 // fixed logo
 .logo.logo-fixed {
 	left:0;
-	top:100px;
+	top:rem(100);
 	position: fixed;
 }
 
 header {
 	background-color:$primary;
 	position: relative;
-	margin-bottom:10px;
 
 	.logo-container {
-		padding-top:15px;
+		padding-top:rem(15);
 	}
 }
 
 nav {
-	padding-left:10px !important;
+	padding-left:rem(10) !important;
+	padding-right:rem(10) !important;
+	padding-bottom:rem(10) !important;
+
+	.navbar-toggler {
+		background:$light;
+		position: absolute;
+	    right: rem(20);
+	    top: rem(-25);
+	}
 
 	&.navbar {
 		padding: {
-			top:28px;
+			top:rem(28);
 			left:0;
 			right:0;
 			bottom:0;
@@ -31,9 +39,8 @@ nav {
 
 	.nav-item {
 		background-color:$secondary;
-		margin-right:2px;
-		width:102px;
 		transition:300ms background ease-in-out;
+		border-bottom:1px solid #000;
 
 		a.nav-link {
 			color:$light !important;
@@ -41,8 +48,8 @@ nav {
 			text-align:center;
 			font-weight:bold;
 			padding: {
-				top:6px !important;
-				bottom:6px !important;
+				top:rem(15) !important;
+				bottom:rem(15) !important;
 			}
 		}
 
@@ -59,8 +66,8 @@ nav {
 				font-weight:bold;
 				text-align:center;
 				padding: {
-					top:6px;
-					bottom:6px;
+					top:rem(15);
+					bottom:rem(15);
 				}
 
 				&:after {
@@ -74,52 +81,52 @@ nav {
 // main content
 .main-container {
 	min-height:836px;
-	display:flex;
 
 	.content-wrapper {
 		background:$main-content;
-		border:10px solid;
+		border:rem(10) solid;
 		border-color:#066666;
-		padding:18px 10px 10px;
+		padding:rem(18) rem(10) rem(10);
 		height:100%;
 
 		p {
 			padding: {
-				left:13px;
-				right:13px;
+				left:rem(13);
+				right:rem(13);
 			}
-			text-indent:36px;
-			font-size:12px;
+			text-indent:rem(36);
+			font-size:rem(12);
 		}
 	}
 
 	// Aside
 	aside {
 		background:$primary;
-		border:10px solid #055252;
+		border:rem(10) solid #055252;
 		height:100%;
-		padding:16px 13px;
+		padding:rem(16) rem(13) rem(32);
 
 		span.headline {
-			font-size:16px;
+			font-size:rem(16);
 			text-transform:uppercase;
 			display:block;
 			font-family:Tahoma, sans-serif;
-			margin-bottom:18px;
+			margin-bottom:rem(18);
 		}
 
 		.social-icons {
-			margin-bottom:38px;
+			margin-bottom:rem(38);
 			li {
+				margin-right:rem(13);
 				a {
 					display:block;
 					background:#848484;
-					padding:10px;
+					padding:rem(10);
 					transition:300ms background ease-in-out;
 
 					.svg-inline--fa {
-						height:18px;
-						width:23px;
+						height:rem(18);
+						width:rem(23);
 					}
 
 					&:hover {
@@ -130,17 +137,14 @@ nav {
 						}
 					}
 				}
-				margin: {
-					right:13px;
-				}
 			}
 		}
 
 		.categories {
-			margin-bottom:19px;
+			margin-bottom:rem(19);
 			.navbar-nav {
 				.nav-item {
-					margin-bottom:7px;
+					margin-bottom:rem(7);
 					.nav-link {
 						border-bottom:1px solid;
 						border-color:$light;
@@ -160,7 +164,7 @@ nav {
 		.recent-stories {
 			.carousel {
 				.carousel-indicators {
-					bottom:-30px;
+					bottom:rem(-30);
 
 					li {
 						cursor:pointer;
@@ -180,22 +184,18 @@ nav {
 // footer
 footer {
 
-	margin: {
-		top:10px;
-	}
-
 	.footer-wrapper {
 		background-color:$secondary;
 		padding: {
-			top:13px;
-			bottom:13px;
+			top:rem(13);
+			bottom:rem(13);
 		}
 
 		.navbar-nav {
 			.nav-item {
-				margin-left:15px;
+				margin-left:rem(15);
 
-				.nav-link {
+				a.nav-link {
 					padding:0;
 					border-bottom:1px solid;
 					border-color:$light;
@@ -211,6 +211,92 @@ footer {
 					.nav-link {
 						border-bottom:1px solid transparent;
 					}
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width:768px) {
+	.main-container {
+		aside {
+			padding: 16px 13px;
+
+			.social-icons {
+				li {
+					margin-right:9px;
+				}
+			}
+		}
+	}
+}
+
+@media screen and (min-width:992px) {
+	body {
+		padding: {
+			top:10px;
+			left:50px;
+			right:50px;
+			bottom:10px;
+		}
+	}
+	header {
+		margin-bottom:10px;
+	}
+	nav {
+		padding-right:0 !important;
+		padding-bottom:0 !important;
+
+		.nav-item {
+			margin-right:2px;
+			width:102px;
+			border-bottom:0 none;
+
+			a.nav-link {
+				padding: {
+					top:6px !important;
+					bottom:6px !important;
+				}
+			}
+		}
+
+		.nav-item.dropdown {
+			.dropdown-toggle {
+				padding: {
+					top:6px;
+					bottom:6px;
+				}
+			}
+		}
+	}
+	.main-container {
+		aside {
+			.social-icons {
+				li {
+					a {
+						padding:rem(7);
+					}
+				}
+			}
+		}
+	}
+	footer {
+		margin-top:10px;
+	}
+}
+
+@media screen and (min-width:1400px) {
+	body {
+		padding: {
+			left:0;
+			right:0;
+		}
+	}
+	.main-container {
+		aside {
+			.social-icons {
+				li {
+					margin-right:13px;
 				}
 			}
 		}
